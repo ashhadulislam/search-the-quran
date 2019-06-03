@@ -98,8 +98,12 @@ localhost:5000/search/word_to_search
 
 ### Todos
 
- - Write MORE Tests
- - Add Night Mode
+ - Make it more visual(Preferable in a different app)
+ - Add robustness ( example support multiple word search)
+
+ If you can help out in any of these tasks or you want to add more features, please feel free to fork and contribute.
+ For any details, get in touch with me at ashhadulislam@gmai.com.
+
 
 License
 ----
@@ -107,7 +111,7 @@ License
 MIT
 
 
-**Free Software, Hell Yeah!**
+**Free Software, Alhamdulillah Yeah!**
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
