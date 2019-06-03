@@ -76,6 +76,8 @@ For example if the word in the verse is enriched then the proximity value will b
 
 The results are sorted on Proximity values for each word.
 
+Please paste the output in any json validator to get a good view of the returned data
+
 ### Development
 
 If you want to source this project
@@ -99,8 +101,8 @@ localhost:5000/search/word_to_search
 
 ### Todos
 
- - Make it more visual(Preferable in a different app)
- - Add robustness ( example support multiple word search)
+ - Make it more visual(Preferably in a different app)
+ - Add robustness ( example, support multiple word search)
 
  If you can help out in any of these tasks or you want to add more features, please feel free to fork and contribute.
  For any details, get in touch with me at ashhadulislam@gmai.com.
