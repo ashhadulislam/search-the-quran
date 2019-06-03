@@ -92,6 +92,7 @@ $ python app.py
 ```
 The app will be running in localhost at port 5000
 You can run query locally as follows
+
 localhost:5000/search/word_to_search
 
 
