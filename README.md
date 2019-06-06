@@ -1,6 +1,7 @@
 # Flask Application To Search For Any English Word In Quran
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+[![HitCount](http://hits.dwyl.io/ashhadulislam/https://githubcom/ashhadulislam/search-the-quran.svg)](http://hits.dwyl.io/ashhadulislam/https://githubcom/ashhadulislam/search-the-quran)
 ### Introduction
 
 Given any word, this application returns all the verses in the Quran in which the word is present.
