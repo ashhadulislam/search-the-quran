@@ -22,7 +22,7 @@ Where word is the word that you are looking for
 ### Result
 Example query:
 
-https://iqrah.herokuapp.com/search/pray
+https://iqrah.herokuapp.com/search/rich
 
 You will get a json file having following structure
 ```json
