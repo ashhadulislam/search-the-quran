@@ -11,6 +11,7 @@ from scripts import helper
 
 def setup_app(application):
    # All your initialization code
+   
    helper.setup()
 
 
