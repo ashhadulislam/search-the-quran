@@ -1,3 +1,6 @@
+[![HitCount](http://hits.dwyl.io/ashhadulislam/https://githubcom/ashhadulislam/search-the-quran.svg)](http://hits.dwyl.io/ashhadulislam/https://githubcom/ashhadulislam/search-the-quran)
+
+
 # Flask Application To Search For Any English Word In Quran
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
@@ -13,11 +16,13 @@ Not only that, it also looks for synonyms of said word and finds the verses whic
 
 You can use this app as a service.
 Simple make a get request:
-http://www.someurl.com/search/word
-where word is the word that you are looking for
+https://iqrah.herokuapp.com/search/word
+Where word is the word that you are looking for
 
 ### Result
 Example query:
+
+https://iqrah.herokuapp.com/search/rich
 
 You will get a json file having following structure
 ```json
