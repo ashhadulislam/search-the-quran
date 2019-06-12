@@ -31,4 +31,4 @@ def search_word(word):
 
 if __name__ == "__main__":
     
-    application.run()
+    application.run(debug=True)
