@@ -7,7 +7,7 @@ import time
 
 import json
 
-
+import zipfile
 
 def read_and_reformat(csv_path):
     df = pd.read_csv(csv_path,dtype=object)
@@ -111,5 +111,17 @@ def is_more_than_a_week_old(df_pkl_name):
         return False
 
 
-    
+
+
+def zip_all_pickles():
+    '''
+    Zips all the pickle files 
+    Returns the zip
+    '''
+    zipf = zipfile.ZipFile('data/zips/PklDump.zip','w', zipfile.ZIP_DEFLATED)
+    for root,dirs, files in os.walk('data/pickles/'):
+        for file in files:
+            zipf.write('data/pickles/'+file)
+    zipf.close()
+    return True
 
