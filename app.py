@@ -9,13 +9,13 @@ from scripts import helper
 
 
 
-def setup_app(application):
-   # All your initialization code
+# def setup_app(application):
+#    # All your initialization code
    
-   helper.setup()
+#    helper.setup()
 
 
-setup_app(application)
+# setup_app(application)
 
 
 
@@ -23,9 +23,9 @@ setup_app(application)
 def hello():
     return "Hello World!"
 
-@application.route('/search/<word>')
-def search_word(word):
-    data_json=helper.search_for_word(word)
+@application.route('/search/<book>/<translator>/<word>')
+def search_word(book,translator,word):
+    data_json=helper.search_for_word(book,translator,word)
     return data_json
 
 

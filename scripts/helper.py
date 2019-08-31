@@ -25,24 +25,31 @@ mapping_dict=None
 reject_list=None
 pkl_location=None
 
-def setup():
-    data_location=constants.data_dir
-    file1=constants.file1
-    
+def setup(book,translator):
+    if book=="bible":
+        if translator=="kjv":
+            specifics=constants.bible_kjv
+    elif book=="quran":
+        if translator=="yuali":
+            specifics=constants.quran_yusuf_ali
+
+    data_location=specifics["data_dir"]
+    file1=specifics["file1"]
+
     global df
     df=read_and_reformat(data_location+file1)
     print("dataframe read")
 
     global pkl_location
-    pkl_location=constants.pkl_dir
+    pkl_location=specifics["pkl_dir"]
 
     global reject_list
-    reject_list=constants.list_reject
+    reject_list=specifics["list_reject"]
     print("reject list {}".format(reject_list))
     # reject_list=get_from_pickle(pkl_location+reject_list)
 
     global mapping_dict
-    mapping_dict=constants.dict_mapping
+    mapping_dict=specifics["dict_mapping"]
     # mapping_dict=get_from_pickle(pkl_location+mapping_dict)
     print("mapping dict {}".format(mapping_dict))
 
@@ -53,9 +60,10 @@ def setup():
 
 
 
-def search_for_word(word):
-    print("searching for {}".format(word))
-    data_dict=get_result(word)
+def search_for_word(book,translator,word):
+    print("searching for {} in the book {}".format(word,book))
+    setup(book,translator)
+    data_dict=get_result(book,translator,word)
     
     
     data_json = json.dumps(data_dict)
@@ -64,7 +72,7 @@ def search_for_word(word):
     
     
 
-def get_result(word):
+def get_result(book,translator,word):
     '''
     check if pkl file for the word exists
     and returns necessary data_dict.
@@ -72,18 +80,19 @@ def get_result(word):
     create pickle and return the same
 
     '''
-    pkl_file="data/pickles/"+word+".pkl"
+    pkl_file=pkl_location+word+".pkl"
 
-    if os.path.isfile(pkl_file):
-        print("Relax! Pickle exists")
-        isOld=is_more_than_a_week_old(pkl_file)
-        print("Is old",isOld)
-        if not isOld:
-            data_dict=pickle.load(open(pkl_file,"rb"))
-            return data_dict
+    # if os.path.isfile(pkl_file):
+    #     print("Relax! Pickle exists")
+    #     isOld=is_more_than_a_week_old(pkl_file)
+    #     print("Is old",isOld)
+    #     if not isOld:
+    #         data_dict=pickle.load(open(pkl_file,"rb"))
+    #         return data_dict
 
     #this part to do the grunt work
     data_dict=search_functions.search_word_in_quran_dict(word,get_from_pickle(pkl_location+mapping_dict),get_from_pickle(pkl_location+reject_list),df)
+
 
     pickle.dump(data_dict,open(pkl_file,"wb"))
     return data_dict
